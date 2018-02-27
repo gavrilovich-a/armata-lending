@@ -1,0 +1,281 @@
+@import "bourbon"
+@import "_var.sass"
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: em(22px)
+	font-family: "RalewayRegular", sans-serif
+	overflow-x: hidden
+	color: #333
+
+.hidden
+	display: none
+
+a, a:hover, a:focus, a:active
+	color: $main-color
+	text-decoration: underline
+
+.headers
+	font-family: 'PFCentroSlabProMedium', $helvetica
+	text-transform: uppercase
+	font-weight: normal
+	color: $headers-color
+
+h1, h2, h3, h4, h5, h6
+	@extend .headers
+	line-height: em(22px)
+
+h1
+	font-size: em(48px)
+	
+h2
+	font-size: em(30px)
+	
+h3
+	font-size: em(24px)
+
+b, strong
+	font-family: 'RalewayBold', $helvetica
+	font-weight: normal
+
+.before
+	content: ''
+	width: 100%
+	height: 100%
+	position: absolute
+	left: 0
+	top: 0
+
+.transit
+	transition: all .5s ease
+
+.ulmnu
+	list-style-type: none
+	margin: 0
+	padding: 0
+	li
+		display: inline-block
+
+/* конец базовых настроек и основ. шрифт, цвета */
+
+.main-head
+	min-height: 620px
+	background-size: cover
+	background-position: center
+	position: relative
+	padding-bottom: 120px
+	&::before
+		@extend .before
+		background-color: #394b5f
+		opacity: .85
+	h1
+		text-transform: none
+		line-height: em(18px)
+
+.top-line
+	padding-top: 45px
+	min-height: 160px
+	background-image: url('img/top_gradient.png')
+	background-repeat: repeat-x
+
+.logo
+	opacity: .95
+	img
+		width: 100px
+
+.main-mnu
+	font-size: em(14px)
+	li
+		line-height: 48px	//	для того что бы меню было строго посередине логотипа
+		padding: 0 10px
+		&.active
+			a
+				color: $main-color
+				text-decoration: underline
+		a:hover
+			color: $main-color
+			text-decoration: underline
+	ul
+		@extend .ulmnu
+	a
+		text-decoration: none
+		color: #fff
+
+.phone-wrap
+	position: relative
+	.phone
+		opacity: 0.9
+		color: #fff
+		font-family: "RobotoBold", $helvetica
+		font-size: em(20px)
+		line-height: 48px	//	для того что бы текст был строго посередине логотипа
+		text-align: right
+		white-space: nowrap
+	.toggle-mnu
+		display: block
+		float: right
+		position: absolute
+		right: 0
+		top: 0
+		text-align: center
+		line-height: 48px
+
+.toggle-mnu
+	display: block
+	width: 28px
+	height: 28px
+	margin: 22px auto 0
+
+.toggle-mnu span:after,
+.toggle-mnu span:before
+	content: ""
+	position: absolute
+	left: 0
+	top: -9px
+.toggle-mnu span:after
+	top: 9px
+.toggle-mnu span
+	position: relative
+	display: block
+
+.toggle-mnu span,
+.toggle-mnu span:after,
+.toggle-mnu span:before
+	width: 100%
+	height: 2px
+	background-color: #fff
+	transition: all 0.3s
+	backface-visibility: hidden
+	border-radius: 2px
+
+.toggle-mnu.on span
+	background-color: transparent
+.toggle-mnu.on span:before
+	transform: rotate(45deg) translate(5px, 5px)
+.toggle-mnu.on span:after
+	transform: rotate(-45deg) translate(7px, -8px)
+.toggle-mnu.on + #menu
+	opacity: 1
+	visibility: visible
+
+.header-wrap
+	margin-top: 40px
+	h1
+		margin-top: 120px
+		color: #fff
+		border-bottom: 8px solid $main-color
+		display: inline-block
+		padding-bottom: 10px
+	ul
+		@extend .ulmnu
+		margin-top: 10px
+		li
+			display: block
+			font-family: 'RalewaySemiBold', $helvetica
+			font-size: em(18px)
+			margin-bottom: 12px
+			position: relative
+			padding-left: 16px
+			&::before
+				content: ''
+				display: block
+				width: 6px
+				height: 11px
+				+triangle(12px, $main-color, right)
+				position: absolute
+				top: 10px
+				left: 0
+			a
+				text-decoration: none
+				color: #fff
+				&:hover
+					text-decoration: underline
+
+.header-left
+	margin-bottom: 50px
+
+.forms
+	background-color: transparentize(#243343, .2)
+	padding: 35px 35px 30px
+	color: #97a4b2
+	font-size: em(14px)
+	border-bottom: 3px solid #1a222b
+	h4
+		color: #fff
+		font-family: 'PFCentroSlabProMedium', $helvetica
+		font-size: em(33px)
+		text-transform: none
+		margin: 0
+	p
+		line-height: em(23px)
+		margin-top: 15px
+	label
+		margin-top: 22px
+		margin-bottom: 20px
+		display: block
+		span
+			letter-spacing: 1.5px
+			display: block
+			margin-bottom: 6px
+			color: #778390
+	input
+		display: block
+		width: 100%
+		border: none
+		box-shadow: 0 -3px #1f2a36
+		background-color: #34465a
+		text-indent: 10px
+		padding: 10px 0
+		transition: all .5s ease
+		font-family: 'PFCentroSlabProMedium', $helvetica
+		font-size: em(20px)
+		&:focus
+			box-shadow: 0 -6px #1f2a36
+			background-color: #394e65
+
+	.buttons
+		margin-top: 10px
+
+.button-wrap
+	text-align: center
+
+.buttons
+	display: inline-block
+	border: none
+	background-color: $main-color
+	color: #111
+	font-family: 'PFCentroSlabProBold', $helvetica
+	font-size: em(22px)
+	padding: 12px 30px
+	border-bottom: 3px solid #b97200
+	transition: all .5s ease
+	text-decoration: none
+	&:hover
+		background-color: #ffb338
+		text-decoration: none
+		color: #111
+	&:active
+		background-color: #db8c0e
+		text-decoration: none
+		color: #111
+	&:focus
+		text-decoration: none
+		color: #111
+
+
+.arrow-bottom
+	display: inline-block
+	width: 40px
+	height: 40px
+	background-image: url("img/arrow_down.png")
+	position: relative
+	z-index: 2
+	cursor: pointer
+	top: 50px
+	opacity: .7
+	transition: all .25s ease
+	&:hover
+		opacity: 1
+
