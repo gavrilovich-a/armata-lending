@@ -2,8 +2,12 @@ $(document).ready(function() {
 
 	$('.toggle-mnu').click(function () {
 		$(this).toggleClass('on');
-		$('.main-mnu').slideToggle()
+		$('.main-mnu').slideToggle();
+		return false;
 	});
+
+	$('.section-content .info-item').equalHeights();
+	$('.s1-bottom .info-item').equalHeights();
 
 	//Цели для Яндекс.Метрики и Google Analytics
 	$(".count_element").on("click", (function() {
