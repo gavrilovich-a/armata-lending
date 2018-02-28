@@ -34,12 +34,19 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
+	.section-content
+		.s1-bottom-triangle
+			background-size: cover
 	.header-wrap
 		margin-top: 0
 		h1
 			margin-top: 0
 	.main-mnu
 		top: 50px
+	.top-line
+		min-height: 140px
+	.info-item
+		margin: 40px 0
 
 
 /* Small Devices, Tablets */
@@ -65,6 +72,30 @@
 		-o-animation: none !important
 		-ms-animation: none !important
 		animation: none !important
+
+	.info-item
+		max-width: 100%
+		margin-top: 20px
+		margin-bottom: 20px
+		border-bottom: 1px solid #d6dae0
+		p
+			border: none
+		&:first-child
+			margin-top: 0
+		h4
+			margin-top: 20px
+
+	.s1-bottom
+		.info-item
+			border-color: #546476
+
+	.info-item-wrap:last-child
+		.info-item
+			border-color: transparent
+
+	.section_1
+		.section-content
+			background-position: bottom
 
 
 /* Extra Small Devices, Phones */
