@@ -9,6 +9,20 @@ $(document).ready(function() {
 	$('.section_1 .section-content .info-item').equalHeights();
 	$('.section_3 .section-content .info-item').equalHeights();
 	$('.s1-bottom .info-item').equalHeights();
+	$('.s2-item').equalHeights();
+	$('.s2-item .img-wrap').equalHeights();
+
+	$('.section_4').waypoint(function (index) {
+
+        $('.section_4 .card').each(function () {
+        	var ths = $(this);
+        	setInterval(function () {
+        		ths.removeClass('card-off').addClass('card-on')
+            }, 150*index);
+        });
+    }, {
+		offset: '20%'
+	});
 
 	//Цели для Яндекс.Метрики и Google Analytics
 	$(".count_element").on("click", (function() {
