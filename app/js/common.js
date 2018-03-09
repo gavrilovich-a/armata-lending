@@ -12,17 +12,32 @@ $(document).ready(function() {
 	$('.s2-item').equalHeights();
 	$('.s2-item .img-wrap').equalHeights();
 
-	$('.section_4').waypoint(function (index) {
+	$('.section_4').waypoint(function () {
+        $('.section_4 .card').each(function (index) {
 
-        $('.section_4 .card').each(function () {
         	var ths = $(this);
         	setInterval(function () {
         		ths.removeClass('card-off').addClass('card-on')
-            }, 150*index);
+            }, 200*index);
         });
     }, {
 		offset: '20%'
 	});
+
+    $('.section_5').waypoint(function () {
+        $('.section_5 .tc-item').each(function (index) {
+
+            var ths = $(this);
+            setTimeout(function () {
+                var myAnimation = new DrawFillSVG({
+                    elementId: 'tc-svg-' + index
+                });
+                ths.removeClass('').addClass('')
+            }, 700*index);
+        });
+    }, {
+        offset: '20%'
+    });
 
 	//Цели для Яндекс.Метрики и Google Analytics
 	$(".count_element").on("click", (function() {
