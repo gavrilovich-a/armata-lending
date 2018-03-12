@@ -6,6 +6,11 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$('.main-footer .toggle-mnu').click(function () {
+		$('html, body').animate({scrollTop: $(document).height()}, 'slow');
+		return false;
+    });
+
 	$('.section_1 .section-content .info-item').equalHeights();
 	$('.section_3 .section-content .info-item').equalHeights();
 	$('.s1-bottom .info-item').equalHeights();

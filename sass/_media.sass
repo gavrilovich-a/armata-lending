@@ -2,6 +2,12 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
+	.main-footer
+		.main-mnu
+			position: relative
+			margin-right: -17px
+			margin-bottom: 25px
+
 	.triangles-container
 		.tc-item
 			margin-bottom: 15px
@@ -42,6 +48,16 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
+	.s8-left
+		.section-head
+			h2
+				text-align: center
+				&::after
+					left: 50%
+					transform: translate(-50%, 0px)
+			p
+				text-align: center
+
 	.s3-img-wrap
 		display: none
 	.section_3
@@ -73,6 +89,8 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	.s8-item
+		margin-bottom: 35px
 	
 	/*Disable Animation on Mobile Devices*/
 	.animated
