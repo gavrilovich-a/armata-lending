@@ -1,5 +1,7 @@
 @import "bourbon"
 @import "_var.sass"
+@import "../app/libs/Magnific-Popup/magnific-popup.sass"
+@import "../app/libs/owl.carousel/assets/owl.carousel.sass"
 
 *::-webkit-input-placeholder
 	color: #fff
@@ -35,6 +37,7 @@ body textarea:required:valid
 		margin-bottom: 65px
 		p
 			margin-top: 60px
+			text-align: center
 			a
 				font-family: 'RalewayBold', $helvetica
 		h2
@@ -245,7 +248,7 @@ body textarea:required:valid
 	background-color: $main-color
 	text-align: center
 	border-radius: 10em
-	margin: 8px 0 0 115px
+	margin: 54px 0 0 115px
 	img
 		width: 70px
 		margin-top: 29px
@@ -257,7 +260,7 @@ body textarea:required:valid
 	.section-bottom
 		background-color: #d6d6d6
 
-.section_pb
+.section-pb
 	padding-bottom: 70px
 
 .cards
@@ -273,12 +276,13 @@ body textarea:required:valid
 		transition: all 1s ease
 		display: inline-block
 		background-color: #2c3949
-		margin: 0 12px
+		margin: 0 12px 30px
 		color: #97a4b2
 		font-size: em(15px)
 		line-height: em(22px)
 		padding: 54px 28px 48px
 		vertical-align: top
+		border-bottom: 4px solid #1a222b
 		h4
 			color: #e5e5e5
 			font-family: 'RalewayBold', $helvetica
@@ -313,10 +317,18 @@ body textarea:required:valid
 		position: relative
 		margin-left: -40px
 		vertical-align: top
+		cursor: default
+		transition: all .5s ease
 		&:first-child
 			margin-left: 0
 			.tc-content
 				margin-left: 50px
+		&:hover
+			transform: scale(1.08)
+			z-index: 3
+			path
+				fill-opacity: 0!important
+				stroke-opacity: 1!important
 		svg
 			position: absolute
 			top: 0
@@ -335,6 +347,100 @@ body textarea:required:valid
 				height: 40px
 				float: left
 				margin-right: 15px
+
+.teams
+	@extend .cards
+	.team
+		.card-icon
+			overflow: hidden
+			line-height: 0
+			box-shadow: 0 0 0 5px #d6d6d6
+			img
+				width: 100%
+		@extend .card
+		background-color: #e5e5e5
+		border-color: #d6d6d6
+		h4
+			margin-top: 35px
+			color: #333
+			text-transform: none
+			margin-bottom: 10px
+		p
+			font-size: em(15px)
+			color: #6e7b8b
+			height: auto
+		.team-phone
+			margin-top: 20px
+			font-family: 'RobotoBold', $helvetica
+			font-size: em(18px)
+			color: #333
+
+.slider
+	margin-bottom: 50px
+	.slide
+		text-align: center
+		margin-bottom: 20px
+		position: relative
+	.owl-item
+		.img-wrap, .slide-descr, h3, p
+			transition: all 1s ease
+			opacity: 0
+			transform: translate3d(100px, 0, 0)
+		.slide-descr, h3
+			transition-delay: .4s
+		p
+			transition-delay: .8s
+		&.active
+			.img-wrap, .slide-descr, h3, p
+				opacity: 1
+				transform: translate3d(0, 0, 0)
+
+		.img-wrap
+			width: 116px
+			height: 116px
+			display: inline-block
+			border-radius: 10em
+			overflow: hidden
+			box-shadow: 0 0 0 7px $main-color
+			margin: 10px
+		h3
+			text-transform: none
+			font-size: em(24px)
+		.slide-descr
+			margin-top: 10px
+			font-size: em(14px)
+			color: #6e7b8b
+
+	.owl-controls
+		text-align: center
+		.owl-dot
+			width: 15px
+			height: 15px
+			margin: 0 3px
+			background-color: #ccc
+			display: inline-block
+			border-radius: 10em
+			&.active
+				background-color: $main-color
+		.owl-nav
+			position: absolute
+			top: 12%
+			width: 100%
+			> div
+				height: 29px
+				width: 16px
+				background-image: url("img/slider_arrows.png")
+				position: absolute
+				left: 20px
+				opacity: .5
+				transition: all .25s ease
+				&:hover
+					opacity: 1
+			.owl-next
+				right: 20px
+				left: auto
+				background-position: -16px 0
+
 
 //ALWAYS END
 @import "_media.sass"

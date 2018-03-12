@@ -24,19 +24,37 @@ $(document).ready(function() {
 		offset: '20%'
 	});
 
-    $('.section_5').waypoint(function () {
-        $('.section_5 .tc-item').each(function (index) {
+    $('.section_5').waypoint(function (dir) {
 
-            var ths = $(this);
-            setTimeout(function () {
-                var myAnimation = new DrawFillSVG({
-                    elementId: 'tc-svg-' + index
-                });
-                ths.removeClass('').addClass('')
-            }, 700*index);
-        });
+        if (dir === 'down') {
+
+            $('.section_5 .tc-item').each(function (index) {
+                var ths = $(this);
+                setTimeout(function () {
+                    var myAnimation = new DrawFillSVG({
+                        elementId: 'tc-svg-' + index
+                    });
+                    ths.children('.tc-content').addClass('tc-content-on');
+                }, 500*index);
+            });
+        }
+
+        this.destroy();
+
     }, {
         offset: '20%'
+    });
+
+    $('.slider').owlCarousel({
+        items: 1,
+        nav: true,
+        navText: '',
+        loop: true,
+        fluidSpeed: 600,
+        autoplaySpeed: 600,
+        navSpeed: 600,
+        dotsSpeed: 600,
+        dragEndSpeed: 600
     });
 
 	//Цели для Яндекс.Метрики и Google Analytics
