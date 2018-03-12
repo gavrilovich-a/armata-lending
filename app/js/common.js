@@ -11,6 +11,39 @@ $(document).ready(function() {
 		return false;
     });
 
+    $('.arrow-bottom').click(function () {
+        $('html, body').animate({ scrollTop: $('.main-head').height()+120 }, 'slow');
+        return false;
+    });
+
+    $('.section-head p, .section-head h2').animated('fadeInRight');
+    $('.info-item-wrap').animated('zoomIn');
+    $('.slider .slide').animated('rollIn');
+    $('.homesect.section_8 .forms').animated('fadeInRight');
+    $('.homesect.section_8 .p').animated('fadeInLeft');
+
+    $('.section_2').waypoint(function () {
+        $('.s2-item-wrap').each(function (index) {
+            var ths = $(this);
+            setInterval(function () {
+                ths.addClass('on')
+            }, 200*index);
+        });
+    }, {
+    	offset: '30%'
+	});
+
+    $('.section_8').waypoint(function () {
+        $('.s8-item').each(function (index) {
+            var ths = $(this);
+            setInterval(function () {
+                ths.addClass('on')
+            }, 200*index);
+        });
+    }, {
+    	offset: '30%'
+	});
+
 	$('.section_1 .section-content .info-item').equalHeights();
 	$('.section_3 .section-content .info-item').equalHeights();
 	$('.s1-bottom .info-item').equalHeights();

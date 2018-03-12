@@ -35,9 +35,10 @@ body textarea:required:valid
 			text-decoration: none
 	.section-head
 		margin-bottom: 65px
-		p
+		p, .p
 			margin-top: 60px
 			text-align: center
+			animation-delay: .4s
 			a
 				font-family: 'RalewayBold', $helvetica
 		h2
@@ -190,6 +191,12 @@ body textarea:required:valid
 	padding: 0 15px
 	width: 185px
 	vertical-align: top
+	opacity: 0
+	transition: all .5s ease
+	transform: translateY(-25px)
+	&.on
+		opacity: 1
+		transform: translateY(0)
 
 .s_dark
 	background-color: #2c3949
@@ -462,12 +469,18 @@ body textarea:required:valid
 			&::after
 				transform: none
 				left: 0
-		p
+		.p
 			text-align: left
 
 .s8-items
 	margin-bottom: 20px
 	.s8-item
+		transition: all .5s ease
+		opacity: 0
+		transform: translateY(-25px)
+		&.on
+			opacity: 1
+			transform: translateY(0)
 		text-align: center
 		.img-wrap
 			height: 72px
