@@ -30,17 +30,24 @@
 				display: block
 				line-height: 0
 				padding: 0
+				&.active
+					a
+						background-color: #273646
+						text-decoration: none
+						font-family: 'RalewayBold', $helvetica
 			a
 				display: block
 				line-height: 48px
 				padding: 0 20px
 				background-color: transparent
-				font-size: em(18px)
+				font-size: em(15px)
+				text-transform: uppercase
 				transition: all .5s ease
+				border-bottom: 1px solid #222c36
 				&:hover
 					background-color: #273646
 	.phone
-		padding-right: 65px
+		padding-right: 52px
 
 	.s3-img-wrap
 		margin-left: 82px
@@ -118,6 +125,7 @@
 		margin-top: 20px
 		margin-bottom: 20px
 		border-bottom: 1px solid #d6dae0
+		padding-left: 0
 		p
 			border: none
 		&:first-child

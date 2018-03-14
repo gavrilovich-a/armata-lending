@@ -104,7 +104,7 @@ body textarea:required:valid
 			margin-top: 30px
 
 .s1-bottom
-	padding: 15px 0 65px
+	padding: 15px 0 50px
 	background-color: #394b5f
 	.info-item
 		margin: 15px 0 0
@@ -153,6 +153,9 @@ body textarea:required:valid
 		color: #111
 		margin-bottom: 75px
 		display: block
+		transition: all .25s ease
+		&:hover
+			color: $main-color
 		> span
 			display: block
 		&-text
@@ -176,6 +179,7 @@ body textarea:required:valid
 		img
 			max-width: 75px
 			max-height: 60px
+			width: auto
 
 .img-wrap
 	img
@@ -197,6 +201,8 @@ body textarea:required:valid
 	&.on
 		opacity: 1
 		transform: translateY(0)
+	&:hover
+		transform: translateY(-10px)
 
 .s_dark
 	background-color: #2c3949
@@ -260,6 +266,12 @@ body textarea:required:valid
 		width: 70px
 		margin-top: 29px
 
+.section_4
+	h3
+		margin-bottom: 0
+	.section-pb
+		padding-bottom: 40px
+
 .s_grey
 	background-color: #e5e5e5
 	&:before
@@ -274,22 +286,29 @@ body textarea:required:valid
 	text-align: center
 	perspective: 600px
 	.card
+		&:hover
+			border-color: $main-color
 		&-on
 			opacity: 1
 		&-off
 			transform: rotateY(100deg)
 			opacity: 0
 		width: 260px
-		transition: all 1s ease
+		transition: all 1.2s ease
 		display: inline-block
 		background-color: #2c3949
 		margin: 0 12px 30px
 		color: #97a4b2
 		font-size: em(15px)
-		line-height: em(22px)
+		line-height: em(21px)
 		padding: 54px 28px 48px
 		vertical-align: top
 		border-bottom: 4px solid #1a222b
+		.img-wrap
+			transition: all .25s ease
+		&:hover
+			.img-wrap
+				transform: scale(1.1)
 		h4
 			color: #e5e5e5
 			font-family: 'RalewayBold', $helvetica
@@ -298,6 +317,7 @@ body textarea:required:valid
 			margin-bottom: 18px
 		p
 			margin-bottom: 0
+			margin-top: 0
 			height: 75px
 			strong
 				color: $main-color
@@ -322,7 +342,7 @@ body textarea:required:valid
 		height: 128px
 		display: inline-block
 		position: relative
-		margin-left: -40px
+		margin-left: -45px
 		vertical-align: top
 		cursor: default
 		transition: all .5s ease
@@ -347,13 +367,20 @@ body textarea:required:valid
 			margin-top: 43px
 			margin-left: 60px
 			text-align: left
-			padding-right: 20px
+			padding-left: 40px
+			opacity: 0
+			transition: all 1s ease
+			&-on
+				opacity: 1
 			span
 				font-size: em(20px)
+				margin-left: -22px
+				position: absolute
 			img
 				height: 40px
 				float: left
-				margin-right: 15px
+				margin-left: -40px
+				margin-right: 32px
 
 .teams
 	@extend .cards
@@ -382,11 +409,15 @@ body textarea:required:valid
 			font-size: em(18px)
 			color: #333
 
+.section_7
+	.section-head
+		margin-bottom: 44px
+
 .slider
-	margin-bottom: 50px
+	margin-bottom: 25px
 	.slide
 		text-align: center
-		margin-bottom: 20px
+		margin-bottom: 30px
 		position: relative
 	.owl-item
 		.img-wrap, .slide-descr, h3, p
@@ -397,6 +428,7 @@ body textarea:required:valid
 			transition-delay: .4s
 		p
 			transition-delay: .8s
+			margin-top: 18px
 		&.active
 			.img-wrap, .slide-descr, h3, p
 				opacity: 1
@@ -413,8 +445,8 @@ body textarea:required:valid
 		h3
 			text-transform: none
 			font-size: em(24px)
+			margin-bottom: 7px
 		.slide-descr
-			margin-top: 10px
 			font-size: em(14px)
 			color: #6e7b8b
 
@@ -460,6 +492,7 @@ body textarea:required:valid
 		input
 			background-color: #c0c0c0
 			color: #333!important
+
 .s8-left
 	.section-head
 		margin-bottom: 50px
@@ -481,6 +514,8 @@ body textarea:required:valid
 		&.on
 			opacity: 1
 			transform: translateY(0)
+		&:hover
+			transform: translateY(-10px)
 		text-align: center
 		.img-wrap
 			height: 72px
@@ -501,6 +536,43 @@ body textarea:required:valid
 	.main-mnu
 		a
 			color: #c7c9cc
+
+.top
+	height: 36px
+	background-color: #1f2b3a
+	background-image: url("img/top.png")
+	background-repeat: no-repeat
+	background-position: center
+	cursor: pointer
+
+#callback
+	max-width: 300px
+	margin: auto
+	position: relative
+	h4
+		line-height: em(18px)
+		margin-bottom: 18px
+
+.mfp-forms
+	.forms
+		background-color: rgba(36, 51, 67, 1)
+	.mfp-close
+		color: #fff
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.25s ease-out
+		&.mfp-ready
+			opacity: 0.8
+		&.mfp-removing
+			opacity: 0
+	&.mfp-wrap
+		.mfp-content
+			opacity: 0
+			transition: all 0.25s ease-out
+		&.mfp-ready .mfp-content
+			opacity: 1
+		&.mfp-removing .mfp-content
+			opacity: 0
 
 //ALWAYS END
 @import "_media.sass"

@@ -16,6 +16,7 @@ body
 a, a:hover, a:focus, a:active
 	color: $main-color
 	text-decoration: underline
+	outline: 0
 
 .headers
 	font-family: 'PFCentroSlabProMedium', $helvetica
@@ -28,13 +29,13 @@ h1, h2, h3, h4, h5, h6
 	line-height: em(22px)
 
 h1
-	font-size: em(48px)
+	font-size: em(50px)
 	
 h2
-	font-size: em(30px)
+	font-size: em(32px)
 	
 h3
-	font-size: em(24px)
+	font-size: em(26px)
 
 b, strong
 	font-family: 'RalewayBold', $helvetica
@@ -86,7 +87,7 @@ b, strong
 		width: 100px
 
 .main-mnu
-	font-size: em(14px)
+	font-size: em(15px)
 	li
 		line-height: 48px	//	для того что бы меню было строго посередине логотипа
 		padding: 0 10px
@@ -114,7 +115,6 @@ b, strong
 		text-align: right
 		white-space: nowrap
 	.toggle-mnu
-		display: block
 		float: right
 		position: absolute
 		right: 0
@@ -126,16 +126,16 @@ b, strong
 	display: block
 	width: 28px
 	height: 28px
-	margin: 22px auto 0
+	margin-top: 14px
 
 .toggle-mnu span:after,
 .toggle-mnu span:before
 	content: ""
 	position: absolute
 	left: 0
-	top: -9px
-.toggle-mnu span:after
 	top: 9px
+.toggle-mnu span:after
+	top: 18px
 .toggle-mnu span
 	position: relative
 	display: block
@@ -153,9 +153,9 @@ b, strong
 .toggle-mnu.on span
 	background-color: transparent
 .toggle-mnu.on span:before
-	transform: rotate(45deg) translate(5px, 5px)
+	transform: rotate(45deg) translate(-1px, 0)
 .toggle-mnu.on span:after
-	transform: rotate(-45deg) translate(7px, -8px)
+	transform: rotate(-45deg) translate(6px, -7px)
 .toggle-mnu.on + #menu
 	opacity: 1
 	visibility: visible
@@ -163,18 +163,18 @@ b, strong
 .header-wrap
 	margin-top: 40px
 	h1
-		margin-top: 120px
+		margin-top: 110px
 		color: #fff
 		border-bottom: 8px solid $main-color
 		display: inline-block
-		padding-bottom: 10px
+		padding-bottom: 8px
 	ul
 		@extend .ulmnu
 		margin-top: 10px
 		li
 			display: block
 			font-family: 'RalewaySemiBold', $helvetica
-			font-size: em(18px)
+			font-size: 18px
 			margin-bottom: 12px
 			position: relative
 			padding-left: 16px
@@ -185,7 +185,7 @@ b, strong
 				height: 11px
 				+triangle(12px, $main-color, right)
 				position: absolute
-				top: 10px
+				top: 4px
 				left: 0
 			a
 				text-decoration: none
@@ -201,7 +201,7 @@ b, strong
 	padding: 35px 35px 30px
 	color: #97a4b2
 	font-size: em(14px)
-	border-bottom: 3px solid #1a222b
+	border-bottom: 4px solid #1a222b
 	h4
 		color: #fff
 		font-family: 'PFCentroSlabProMedium', $helvetica
@@ -210,10 +210,10 @@ b, strong
 		margin: 0
 	p
 		line-height: em(23px)
-		margin-top: 15px
+		margin-top: 10px
 	label
-		margin-top: 22px
-		margin-bottom: 20px
+		margin-top: 20px
+		margin-bottom: 15px
 		display: block
 		span
 			letter-spacing: 1.5px
@@ -236,7 +236,7 @@ b, strong
 			background-color: #394e65
 
 	.buttons
-		margin-top: 10px
+		margin-top: 15px
 
 .button-wrap
 	text-align: center
